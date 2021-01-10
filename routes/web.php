@@ -4,6 +4,7 @@ use App\Http\Livewire\Auth\LoginComponent;
 use App\Http\Livewire\Auth\RegisterComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\DashboardComponent;
+use App\Http\Livewire\IncomeComponent;
 use App\Http\Livewire\ProfileComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/', DashboardComponent::class)->name('dashboard');
     Route::get('/profile', ProfileComponent::class)->name('profile');
     Route::get('/category', CategoryComponent::class)->name('category');
+    Route::get('/income', IncomeComponent::class)->name('income');
 });

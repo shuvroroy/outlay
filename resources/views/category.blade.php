@@ -60,10 +60,10 @@
                                             @endif
                                         </td>
                                         <td class="px-6 py-4 text-right whitespace-nowrap">
-                                            <p class="text-xs text-gray-500">{{ $category->created_at->format('M, d Y') }}</p>
+                                            <p class="text-sm text-gray-500">{{ $category->created_at->format('M, d Y') }}</p>
                                         </td>
                                         <td class="px-6 py-4 text-right whitespace-nowrap">
-                                            <p class="text-xs text-gray-500">{{ $category->updated_at->format('M, d Y') }}</p>
+                                            <p class="text-sm text-gray-500">{{ $category->updated_at->format('M, d Y') }}</p>
                                         </td>
                                         <td class="px-6 py-4 space-x-1.5 whitespace-nowrap text-right text-sm font-medium">
                                             <button wire:click="edit({{ $category->id }})" type="button" class="focus:outline-none">

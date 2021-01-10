@@ -6,8 +6,9 @@ use App\Scopes\UserVisibilityScope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-final class Category extends Model
+final class Income extends Model
 {
     use HasFactory;
 
@@ -17,9 +18,11 @@ final class Category extends Model
      * @var array
      */
     protected $fillable = [
+        'category_id',
         'user_id',
-        'name',
-        'is_active',
+        'title',
+        'amount',
+        'entry_date'
     ];
 
     /**
@@ -28,8 +31,15 @@ final class Category extends Model
      * @var array
      */
     protected $casts = [
-        'is_active' => 'boolean'
+        'entry_date' => 'date'
     ];
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['category'];
 
     /**
      * The "booted" method of the model.
@@ -42,7 +52,7 @@ final class Category extends Model
     }
 
     /**
-     * Scope a query to only include categories of a given value.
+     * Scope a query to only include incomes of a given value.
      *
      * @param Builder $query
      * @param string $value
@@ -50,27 +60,27 @@ final class Category extends Model
      */
     public function scopeSearch(Builder $query, string $value): Builder
     {
-        return $query->where('name', 'like', '%'.$value.'%');
+        return $query->where('title', 'like', '%'.$value.'%')
+            ->orWhere('amount', 'like', '%'.$value.'%');
     }
 
     /**
-     * Scope a query to only include active categories.
+     * Get the category that owns the income.
      *
-     * @param Builder $query
-     * @return Builder
+     * @return BelongsTo
      */
-    public function scopeActive(Builder $query): Builder
+    public function category(): BelongsTo
     {
-        return $query->where('is_active', true);
+        return $this->belongsTo(Category::class);
     }
 
     /**
-     * Get the incomes for the category.
+     * Get the user that owns the income.
      *
-     * @return HasMany
+     * @return BelongsTo
      */
-    public function incomes(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->hasMany(Income::class);
+        return $this->belongsTo(User::class);
     }
 }

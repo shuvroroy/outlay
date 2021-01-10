@@ -69,4 +69,14 @@ final class User extends Authenticatable
     {
         return $this->hasMany(Category::class);
     }
+
+    /**
+     * Get the incomes for the user.
+     *
+     * @return HasMany
+     */
+    public function incomes(): HasMany
+    {
+        return $this->hasMany(Income::class);
+    }
 }
