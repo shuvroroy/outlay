@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Scopes\UserVisibilityScope;
+use App\Traits\HasActivity;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 final class Expense extends Model
 {
     use HasFactory;
+    use HasActivity;
 
     /**
      * The attributes that are mass assignable.
