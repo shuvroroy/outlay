@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-final class Income extends Model
+final class Expense extends Model
 {
     use HasFactory;
 
@@ -52,7 +52,7 @@ final class Income extends Model
     }
 
     /**
-     * Scope a query to only include incomes of a given value.
+     * Scope a query to only include expenses of a given value.
      *
      * @param Builder $query
      * @param string $value
@@ -65,7 +65,7 @@ final class Income extends Model
     }
 
     /**
-     * Get the category that owns the income.
+     * Get the category that owns the expense.
      *
      * @return BelongsTo
      */
@@ -75,7 +75,7 @@ final class Income extends Model
     }
 
     /**
-     * Get the user that owns the income.
+     * Get the user that owns the expense.
      *
      * @return BelongsTo
      */

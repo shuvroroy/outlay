@@ -73,4 +73,14 @@ final class Category extends Model
     {
         return $this->hasMany(Income::class);
     }
+
+    /**
+     * Get the expenses for the category.
+     *
+     * @return HasMany
+     */
+    public function expenses(): HasMany
+    {
+        return $this->hasMany(Expense::class);
+    }
 }
