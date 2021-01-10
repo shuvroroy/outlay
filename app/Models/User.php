@@ -50,9 +50,9 @@ final class User extends Authenticatable
      * Get the URL to the user's profile photo.
      *
      * @param string $value
-     * @return string
+     * @return string|null
      */
-    public function getAvatarAttribute(string $value): string
+    public function getAvatarAttribute(?string $value): string
     {
         return $value
             ? Storage::disk('public')->url($value)

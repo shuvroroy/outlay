@@ -42,7 +42,7 @@
                     </div>
                     <div class="mt-5 flex-1 h-0 overflow-y-auto">
                         <nav class="px-2">
-                            <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md focus:outline-none focus:bg-indigo-700 transition ease-in-out duration-150 @if(request()->routeIs('')) text-white bg-indigo-900 @else text-indigo-300 hover:text-white hover:bg-indigo-700 focus:text-white @endif">
+                            <a href="{{ route('dashboard') }}" class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md focus:outline-none focus:bg-indigo-700 transition ease-in-out duration-150 @if(request()->routeIs('dashboard')) text-white bg-indigo-900 @else text-indigo-300 hover:text-white hover:bg-indigo-700 focus:text-white @endif">
                                 <svg class="mr-4 h-6 w-6 text-indigo-400 group-hover:text-indigo-300 group-focus:text-indigo-300 transition ease-in-out duration-150" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"/>
                                 </svg>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
                     <nav class="flex-1 px-2 bg-indigo-800">
-                        <a href="#" class="group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md focus:outline-none focus:bg-indigo-700 transition ease-in-out duration-150 @if(request()->routeIs('')) text-white bg-indigo-900 @else text-indigo-300 hover:text-white hover:bg-indigo-700 focus:text-white @endif">
+                        <a href="{{ route('dashboard') }}" class="group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md focus:outline-none focus:bg-indigo-700 transition ease-in-out duration-150 @if(request()->routeIs('dashboard')) text-white bg-indigo-900 @else text-indigo-300 hover:text-white hover:bg-indigo-700 focus:text-white @endif">
                             <svg class="mr-3 h-6 w-6 text-indigo-400 group-focus:text-indigo-300 transition ease-in-out duration-150" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"/>
                             </svg>
@@ -101,7 +101,7 @@
                         <div x-data="{ open: false }" @click.away="open = false" class="ml-3 relative">
                             <div>
                                 <button @click="open = !open" class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline">
-                                    <img class="h-8 w-8 object-cover rounded-full" src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name }}" />
+                                    <img class="h-10 w-10 object-cover rounded-full" src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name }}" />
                                 </button>
                             </div>
                             <div
@@ -114,9 +114,9 @@
                                 x-transition:leave-end="transform opacity-0 scale-95"
                                 class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
                             >
-                                <div class="py-1 rounded-md bg-white shadow-xs">
+                                <div class="pb-1 rounded-md bg-white shadow-xs">
                                     <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150">Your Profile</a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150">Sign out</a>
+                                    <livewire:auth.logout-component />
                                 </div>
                             </div>
                         </div>

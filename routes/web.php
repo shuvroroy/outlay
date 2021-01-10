@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Livewire\Auth\LoginComponent;
+use App\Http\Livewire\Auth\RegisterComponent;
+use App\Http\Livewire\DashboardComponent;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,3 +15,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', LoginComponent::class)->name('login');
+    Route::get('/register', RegisterComponent::class)->name('register');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', DashboardComponent::class)->name('dashboard');
+});
