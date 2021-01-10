@@ -14,9 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
-            'name' => 'John Doe',
-            'email' => 'john@outlay.test',
-        ]);
+        User::factory()
+            ->hasCategories(1, ['name' => 'Food'])
+            ->hasCategories(1, ['name' => 'Salary'])
+            ->hasCategories(1, ['name' => 'Shopping'])
+            ->create([
+                'name' => 'John Doe',
+                'email' => 'john@outlay.test',
+            ]);
     }
 }
