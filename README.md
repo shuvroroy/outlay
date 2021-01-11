@@ -1,62 +1,82 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://snowball-02.icedrive.io/?p=BVViPOrk8tn4Cedepu8Hc4lO%2BNNFvUxYC3WuOq%2BQ5c0d%2FXWqW6KhP4KxLc6Un%2BlpQ372egRzyc6S%2FF5q%2FFesdSMYvi600Igd4nWpYWTfTRSkzvIxFxqCYrAsm1vacPc%2FGq9eY2CGTOrj4UTTxDKn%2Bg%3D%3D&w=1280&h=1280" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Outlay is an expense tracker app build with TALL stack.
 
-## About Laravel
+![](https://icecube-eu-286.icedrive.io/thumbnail?p=JLMnGneBAxTGx8af9netq7sg2p8NPpio235P7mQl8pqhIqGhSvTPpR%2Fb7Art5rH5SmGoP8x0gji1DMlf5UZdLjeKJpoMgvh6OMwOLcVYGY4Up85qbA5l0jo%2FOGz5%2Fr9h&w=1280&h=1280)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Clone the repo locally:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```sh
+git clone https://github.com/shuvroroy/outlay.git outlay
+cd outlay
+```
 
-## Learning Laravel
+Install PHP dependencies:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```sh
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Install NPM dependencies:
 
-## Laravel Sponsors
+```sh
+npm ci
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Build assets:
 
-### Premium Partners
+```sh
+npm run dev
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+Setup configuration:
 
-## Contributing
+```sh
+cp .env.example .env
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Generate application key:
 
-## Code of Conduct
+```sh
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Edit .env and set your database connection details.
 
-## Security Vulnerabilities
+```sh
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=outlay
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Run database migrations:
 
-## License
+```sh
+php artisan migrate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Run database seeder:
+
+```sh
+php artisan db:seed
+```
+
+Run the dev server (the output will give the address):
+
+```sh
+php artisan serve
+```
+
+You're ready to go! Visit outlay in your browser, and login with:
+
+- **Username:** john@outlay.test
+- **Password:** password
+
+## Special Thanks
+
+- [Mohammad Emran Hasan](http://github.com/phpfour)
