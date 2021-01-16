@@ -49,7 +49,7 @@ final class ExpenseComponent extends Component
     {
         $this->resetErrorBag();
 
-        $this->modalHeadingText = 'Add Income';
+        $this->modalHeadingText = 'Add Expense';
 
         $this->expense = Expense::make(['entry_date' => now()]);
 
@@ -60,7 +60,7 @@ final class ExpenseComponent extends Component
     {
         $this->resetErrorBag();
 
-        $this->modalHeadingText = 'Edit Income';
+        $this->modalHeadingText = 'Edit Expense';
 
         $this->expense = $expense;
 
