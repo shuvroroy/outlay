@@ -1,4 +1,4 @@
-<p align="center"><a href="http://outlay.uu6cf71xzw-xmz4qq9z142o.p.runcloud.link/" target="_blank"><img src="https://snowball-02.icedrive.io/?p=Am4cDCzceRLLmklX86HJzknFnDIqQbmaYjl8U0LMExKnEj.dEdzApl7dJxmNmuG2xVtFDVLC3lU50I5QPLLXlA2qgBNIuB1gPjp54kqdTNL3S6.dPy7UrFoyWcbVg_JftFMWz.SBcCgbTlTzjJApKw--&w=1024&h=1024&m=cropped" width="400"></a></p>
+![Outlay](./public/img/logo/dark.svg)
 
 > Outlay is an expense tracker app build with TALL stack.
 
